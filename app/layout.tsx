@@ -1,6 +1,7 @@
 // src/app/layout.tsx
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { SafeArea } from "./components/SafeArea";
 
 export const metadata: Metadata = {
   title: "My PWA App",
@@ -42,7 +43,9 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="My PWA App" />
         <meta name="mobile-web-app-capable" content="yes" />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <SafeArea>{children}</SafeArea>
+        </body>
     </html>
   );
 }

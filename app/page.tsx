@@ -1,4 +1,5 @@
 import React from 'react'
+import InstallButton from './components/InstallButton'
 
 const page = () => {
   return (
@@ -7,9 +8,7 @@ const page = () => {
       {/* Navbar */}
       <nav className="flex justify-between items-center px-6 py-4 max-w-6xl mx-auto">
         <h1 className="text-xl font-bold">PWAApp</h1>
-        <button className="px-4 py-2 border border-white rounded-lg hover:bg-white hover:text-black transition">
-          Install App
-        </button>
+        <InstallButton />
       </nav>
 
       {/* Hero Section */}
