@@ -1,4 +1,3 @@
-import React from 'react'
 import InstallButton from './components/InstallButton'
 
 const page = () => {
