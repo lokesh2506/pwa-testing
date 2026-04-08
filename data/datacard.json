@@ -1,0 +1,40 @@
+{
+  "cards": [
+    {
+        "cardTitle":"SM Target",
+        "cardIcon":"target",
+        "data":"500",
+        "subIcon":"trending_up",
+        "subData":"5%",
+        "cardSubTitle":"vs last month",
+        "iconStyle":"selected-menu-text bg-primary-10"
+    },
+    {
+        "cardTitle":"SM Enrolled",
+        "cardIcon":"how_to_reg",
+        "data":"450",
+        "subIcon":"trending_up",
+        "subData":"12%",
+        "cardSubTitle":"90% of target",
+        "iconStyle":"text-blue-400 bg-blue-400/10"
+    },
+    {
+        "cardTitle":"CHO Target",
+        "cardIcon":"flag",
+        "data":"10,000",
+        "subIcon":"remove",
+        "subData":"0%",
+        "cardSubTitle":"Stable",
+        "iconStyle":"text-purple-400 bg-purple-400/10"
+    },
+    {
+        "cardTitle":"CHO Enrolled",
+        "cardIcon":"school",
+        "data":"8,200",
+        "subIcon":"trending_down",
+        "subData":"8%",
+        "cardSubTitle":"82% of target",
+        "iconStyle":"text-orange-400 bg-orange-400/10"
+    }
+  ]
+}

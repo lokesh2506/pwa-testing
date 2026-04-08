@@ -1,13 +1,15 @@
 :root {
-  --card-bg: #18282f;
   --card-primary-text: #ffffff;
   --card-secondary-text: #9db2b9;
   --card-menu-text: #006686;
+
+  --card-bg: 24 40 47; 
+  --bg-primary: 0 102 134;
 }
 
 /* Card styles */
-.card-bg{
-  background-color: var(--card-bg);
+.card-bg {
+  background-color: rgb(var(--card-bg) / 1);
 }
 
 .card-title {
@@ -25,3 +27,10 @@
   border-color: var(--card-menu-text);
 }
 
+.bg-primary{
+  color: rgb(var(--bg-primary) /1)
+}
+
+.bg-primary-10 {
+  background-color: rgb(var(--bg-primary) / 0.1);
+}

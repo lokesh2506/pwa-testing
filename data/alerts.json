@@ -1,0 +1,25 @@
+{
+  "alerts": [
+    {
+      "alertTitle": "State: Karnataka",
+      "alertDescription": "Group Mentoring attendance dropped below 60% threshold.",
+      "alertDate": "2026-04-08",
+      "alertLinkData": "Review Data",
+      "alertLink": "/"
+    },
+    {
+      "alertTitle": "State: Assam",
+      "alertDescription": "High vacancy rate in mentor positions (15%).",
+      "alertDate": "2026-04-08",
+      "alertLinkData": "Contact Coordinator",
+      "alertLink": "/"
+    },
+    {
+      "alertTitle": "Policy Update",
+      "alertDescription": "Quarterly report overdue for 3 districts.",
+      "alertDate": "2026-04-06",
+      "alertLinkData": "Send Reminder",
+      "alertLink": "/"
+    }
+  ]
+}
