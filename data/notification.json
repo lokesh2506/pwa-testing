@@ -1,0 +1,25 @@
+{
+  "notifications": [
+    {
+      "notificationTitle": "New User Registered",
+      "subtitle": "A new user has successfully signed up to the platform.",
+      "link":"/"
+    },
+    {
+      "notificationTitle": "Server Maintenance",
+      "subtitle": "Scheduled maintenance will occur tonight at 12:00 AM."
+    },
+    {
+      "notificationTitle": "Payment Received",
+      "subtitle": "Your recent transaction has been completed successfully."
+    },
+    {
+      "notificationTitle": "New Message",
+      "subtitle": "You have received a new message from the support team."
+    },
+    {
+      "notificationTitle": "Update Available",
+      "subtitle": "A new version of the application is ready to install."
+    }
+  ]
+}

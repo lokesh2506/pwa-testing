@@ -1,0 +1,27 @@
+:root {
+  --card-bg: #18282f;
+  --card-primary-text: #ffffff;
+  --card-secondary-text: #9db2b9;
+  --card-menu-text: #006686;
+}
+
+/* Card styles */
+.card-bg{
+  background-color: var(--card-bg);
+}
+
+.card-title {
+  color: var(--card-primary-text);
+}
+
+.card-subtitle {
+  color: var(--card-secondary-text);
+}
+.selected-menu-text{
+  color: var(--card-menu-text);
+}
+
+.border-primary{
+  border-color: var(--card-menu-text);
+}
+

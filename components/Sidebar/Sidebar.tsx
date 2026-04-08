@@ -1,0 +1,75 @@
+"use client";
+
+import data from "@/data/sidebar.json";
+import CommonButton from "../Buttons/CommonButton";
+import UserProfileSection from "./UserProfileSection";
+import SideBarMenu from "./SideBarMenu";
+import { useSidebar } from "@/hooks/dashboard/useSidebar";
+import SideBarArrow from "./SideBarArrow";
+
+const Sidebar = () => {
+  
+  // custom hooks
+  const {isOpen,toggle,isArrowVisible,activeTab,setActiveTab,navigate} = useSidebar();
+
+  return (
+    <>
+      {/* Overlay (Mobile) */}
+      <div
+          onClick={toggle}
+          className={`fixed inset-0 bg-black/50 transition-opacity duration-300 min-w-full 
+          ${isOpen ? "opacity-100 z-20" : "opacity-0 -z-10"}`}
+      />
+
+      {/* Sidebar */}
+      <aside
+        className={`
+          card-bg h-screen transition-all duration-300 ease-in-out fixed top-0 left-0 z-30
+          w-[60%] md:w-[25%] lg:static lg:translate-x-0 lg:max-w-64
+          ${isOpen ? "translate-x-0" : "-translate-x-full"}
+        `}
+      >
+        <div className="flex flex-col h-full min-h-0 p-4">
+          {/* Top Section */}
+          <div className="flex flex-col gap-6 flex-1 min-h-0">
+            
+            <UserProfileSection userData={data.user} />
+
+            {/* Scrollable side bar Menu  */}
+            <div className="flex-1 overflow-y-auto min-h-0 custom-scrollbar pr-2">
+              <SideBarMenu
+                menuData={data.menu}
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
+              />
+            </div>
+
+          </div>
+
+          {/* Logout Botton */}
+          <div className="pt-4 shrink-0">
+            <CommonButton
+              buttonStyle="flex items-center justify-center gap-2 w-full rounded-lg h-10 px-4 bg-slate-800 hover:text-white card-subtitle hover:bg-slate-700 transition-colors text-sm font-bold"
+              content={
+                <>
+                  <span className="material-symbols-outlined logout-icon">logout</span>
+                  <span className="text-sm font-bold">Log Out</span>
+                </>
+              }
+              clickFunction={() => {
+                navigate("/");
+              }}
+            />
+          </div>
+
+        </div>
+      </aside>
+      
+      { !isOpen &&
+        <SideBarArrow toggle={toggle} isArrowVisible={isArrowVisible}/>
+      }
+    </>
+  );
+};
+
+export default Sidebar;
