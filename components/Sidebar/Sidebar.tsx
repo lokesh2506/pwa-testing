@@ -8,24 +8,25 @@ import { useSidebar } from "@/hooks/dashboard/useSidebar";
 import SideBarArrow from "./SideBarArrow";
 
 const Sidebar = () => {
-  
-  // custom hooks
-  const {isOpen,toggle,isArrowVisible,activeTab,setActiveTab,navigate} = useSidebar();
+  const { isOpen, toggle, activeTab,isArrowVisible, setActiveTab, navigate } = useSidebar();
 
   return (
     <>
-      {/* Overlay (Mobile) */}
-      <div
+      {/* Overlay (Mobile) - Closes sidebar when clicked */}
+      {isOpen && (
+        <div
           onClick={toggle}
-          className={`fixed inset-0 bg-black/50 transition-opacity duration-300 min-w-full 
-          ${isOpen ? "opacity-100 z-20" : "opacity-0 -z-10"}`}
-      />
+          className="fixed inset-0 bg-black/50 z-30 lg:hidden transition-opacity duration-300"
+          aria-hidden="true"
+        />
+      )}
 
       {/* Sidebar */}
       <aside
         className={`
-          card-bg h-screen transition-all duration-300 ease-in-out fixed top-0 left-0 z-30
-          w-[60%] md:w-[25%] lg:static lg:translate-x-0 lg:max-w-64
+          fixed top-0 left-0 h-screen w-64 z-40 bg-slate-900
+          transition-transform duration-300 ease-in-out
+          lg:static lg:translate-x-0 lg:z-auto lg:w-64 lg:flex-shrink-0
           ${isOpen ? "translate-x-0" : "-translate-x-full"}
         `}
       >
@@ -46,7 +47,7 @@ const Sidebar = () => {
 
           </div>
 
-          {/* Logout Botton */}
+          {/* Logout Button */}
           <div className="pt-4 shrink-0">
             <CommonButton
               buttonStyle="flex items-center justify-center gap-2 w-full rounded-lg h-10 px-4 bg-slate-800 hover:text-white card-subtitle hover:bg-slate-700 transition-colors text-sm font-bold"
@@ -64,7 +65,10 @@ const Sidebar = () => {
 
         </div>
       </aside>
-      
+
+      {/* Mobile Toggle Button - Visible when sidebar is closed */}
+
+
       { !isOpen &&
         <SideBarArrow toggle={toggle} isArrowVisible={isArrowVisible}/>
       }

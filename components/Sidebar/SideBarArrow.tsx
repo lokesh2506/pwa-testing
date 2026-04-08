@@ -1,21 +1,30 @@
 import { SidebarArrow } from "@/types/dashboard/sidebar"
+import CommonButton from "../Buttons/CommonButton";
 
-const SideBarArrow = ({toggle,isArrowVisible}:SidebarArrow) => {
+const SideBarArrow = ({ toggle,isArrowVisible }: SidebarArrow) => {
   return (
-    <div
-      onClick={toggle}
-      className={`fixed bottom-6 left-6 z-50 transition-all duration-300 lg:hidden ${
-      isArrowVisible ? "opacity-100" : "opacity-0"
-      }`} 
-    >
-    
-      <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform">
-      <span className="material-symbols-outlined text-black">
-        chevron_right
-      </span>
-      </div>
-    </div>
-  )
-}
+    <CommonButton
+      type="button"
+      clickFunction={toggle}
+      buttonStyle={`
+        fixed bottom-6 left-6 z-50 lg:hidden
+        w-10 h-10 p-0
+        bg-white rounded-full
+        flex items-center justify-center
+        shadow-lg hover:shadow-xl
+        cursor-pointer
+        hover:scale-110 transition-transform duration-200
+         ${
+          isArrowVisible ? "opacity-100" : "opacity-0"
+        }
+      `}
+      content={
+        <span className="material-symbols-outlined text-slate-900 text-xl">
+          chevron_right
+        </span>
+      }
+    />
+  );
+};
 
-export default SideBarArrow
+export default SideBarArrow;
