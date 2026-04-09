@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import "../styles/theme.css";
-import { SafeArea } from "../components/Pwa/SafeArea";
-import RegisterSW from "../components/Pwa/RegisterSW";
+import { SafeArea } from "../components/pwa/SafeArea";
+import RegisterSW from "../components/pwa/RegisterSW";
 import { Inter } from "next/font/google";
-import ThemeProvider from "@/components/Providers/ThemeProvider";
+import ThemeProvider from "@/components/providers/ThemeProvider";
 
 
 //  Inter Font (100–900)

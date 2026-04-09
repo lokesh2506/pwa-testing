@@ -1,10 +1,11 @@
+"use client"
 import { useEffect, useState } from "react";
 
 const formatDayAgo = (dateString: string): string => {
   const now = new Date();
   const past = new Date(dateString);
 
-  // ❌ invalid date safeguard
+  //  invalid date safeguard
   if (isNaN(past.getTime())) return "invalid date";
 
   // normalize time (remove time part)
@@ -18,6 +19,8 @@ const formatDayAgo = (dateString: string): string => {
   if (diffInDays < 0) return "today"; // future fallback
   if (diffInDays === 0) return "today";
   if (diffInDays === 1) return "1 day ago";
+  if (diffInDays < 7) return `${diffInDays} days ago`;
+  if (diffInDays < 30) return `${Math.floor(diffInDays / 7)} weeks ago`;
   if (diffInDays < 365) return `${diffInDays} days ago`;
 
   const years = Math.floor(diffInDays / 365);

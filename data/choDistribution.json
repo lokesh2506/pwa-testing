@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "distributionTitle": "OMP (Onboarding)",
+      "distributionValue": 2460,
+      "distributionPercentage": 30
+    },
+    {
+      "id": "2",
+      "distributionTitle": "IMP (Implementation)",
+      "distributionValue": 4100,
+      "distributionPercentage": 50
+    },
+    {
+      "id": "3",
+      "distributionTitle": "EMP (Evaluation)",
+      "distributionValue": 1640,
+      "distributionPercentage": 20
+    }
+  ]
+}

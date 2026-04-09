@@ -1,7 +1,7 @@
 "use client";
 
 import data from "@/data/sidebar.json";
-import CommonButton from "../Buttons/CommonButton";
+import CommonButton from "../buttons/CommonButton";
 import UserProfileSection from "./UserProfileSection";
 import SideBarMenu from "./SideBarMenu";
 import { useSidebar } from "@/hooks/dashboard/useSidebar";

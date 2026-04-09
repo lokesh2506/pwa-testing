@@ -28,7 +28,7 @@
 }
 
 .bg-primary{
-  color: rgb(var(--bg-primary) /1)
+  background-color: rgb(var(--bg-primary) /1)
 }
 
 .bg-primary-10 {
