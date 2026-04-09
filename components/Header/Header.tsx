@@ -19,7 +19,7 @@ const Header = () => {
         <ThemeToggle />
         {/* Search box */}
         <SearchBox 
-          searchBoxStyle={`card-bg border border-slate-700 text-sm text-white rounded-full pl-10 pr-4 py-2 
+          searchBoxStyle={`card-bg border border-slate-700 text-sm  text-gray-900 dark:text-white rounded-full pl-10 pr-4 py-2 
             focus:outline-none focus:border-primary w-full max-w-64" 
           `}
           placeholder="Search states, mentors..."

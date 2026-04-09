@@ -50,7 +50,7 @@ const QuickTargetAdjust = () => {
               value={target}
               onChange={(e) => handleInputChange(e.target.value)}
               placeholder="Enter target number"
-              className="flex-1 bg-slate-800 text-white border border-slate-600 rounded-lg p-2.5 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+              className="flex-1 bg-white dark:bg-slate-800 text-gray-800 dark:text-white border border-slate-600 rounded-lg p-2.5 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
             />
 
             <CommonButton

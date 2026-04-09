@@ -16,7 +16,7 @@ const DocumentItem = ({ doc }: Props) => {
   return (
     <Link
       href={doc.url}
-      className="flex items-center gap-3 p-3 rounded-lg bg-slate-800/50 border border-transparent hover:border-slate-600 transition-colors group"
+      className="flex items-center gap-3 p-3 rounded-lg  bg-white dark:bg-slate-800/50   border border-transparent hover:border-slate-600 transition-colors group"
     >
       <div
         className={`${config.color.bg} p-2 rounded ${config.color.text} ${config.color.hover} transition-colors`}
@@ -27,10 +27,10 @@ const DocumentItem = ({ doc }: Props) => {
       </div>
 
       <div className="flex flex-col overflow-hidden">
-        <span className="text-white text-sm font-medium truncate">
+        <span className="card-title text-sm font-medium truncate">
           {doc.docName}
         </span>
-        <span className="card-subtitle text-xs">
+        <span className="card-subtitle  text-xs">
           Updated {timeAgo}
         </span>
       </div>

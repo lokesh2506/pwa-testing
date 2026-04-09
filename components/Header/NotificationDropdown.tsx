@@ -15,9 +15,9 @@ const NotificationDropdown = ({ notifications = [] }: NotificationProps) => {
         notifications.map((item, index) => {
           const content = (
             <div
-              className="px-4 py-3 hover:bg-slate-700/30 cursor-pointer transition-colors"
+              className="px-4 py-3 hover:bg-slate-700/30 cursor-pointer transition-colors border-b border-b-gray-300 dark:border-b-gray-100/20"
             >
-              <h4 className="text-sm font-semibold text-white">
+              <h4 className="text-sm font-semibold card-title">
                 {item.notificationTitle}
               </h4>
               <p className="text-xs card-subtitle mt-1">

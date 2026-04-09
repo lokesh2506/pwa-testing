@@ -24,7 +24,7 @@ const Sidebar = () => {
       {/* Sidebar */}
       <aside
         className={`
-          fixed top-0 left-0 h-screen w-64 z-40 bg-slate-900
+          fixed top-0 left-0 h-screen w-64 z-40 card-bg
           transition-transform duration-300 ease-in-out
           lg:static lg:translate-x-0 lg:z-auto lg:w-64 lg:flex-shrink-0
           ${isOpen ? "translate-x-0" : "-translate-x-full"}
@@ -50,7 +50,7 @@ const Sidebar = () => {
           {/* Logout Button */}
           <div className="pt-4 shrink-0">
             <CommonButton
-              buttonStyle="flex items-center justify-center gap-2 w-full rounded-lg h-10 px-4 bg-slate-800 hover:text-white card-subtitle hover:bg-slate-700 transition-colors text-sm font-bold"
+              buttonStyle="flex items-center justify-center gap-2 w-full rounded-lg h-10 px-4 bg-red-400 text-white transition-colors text-sm font-bold"
               content={
                 <>
                   <span className="material-symbols-outlined logout-icon">logout</span>

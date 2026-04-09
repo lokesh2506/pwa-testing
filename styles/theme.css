@@ -1,10 +1,21 @@
 :root {
+  /* LIGHT (default) */
+  --card-bg: 238 238 238;
+  --bg-primary: 0 102 134;
+
+  --card-primary-text: #0f172a;
+  --card-secondary-text: #5f6c72;
+  --card-menu-text: #006686;
+}
+
+.dark {
+  /* DARK override */
+  --card-bg: 24 40 47;
+  --bg-primary: 0 102 134;
+
   --card-primary-text: #ffffff;
   --card-secondary-text: #9db2b9;
   --card-menu-text: #006686;
-
-  --card-bg: 24 40 47; 
-  --bg-primary: 0 102 134;
 }
 
 /* Card styles */
@@ -18,9 +29,6 @@
 
 .card-subtitle {
   color: var(--card-secondary-text);
-}
-.selected-menu-text{
-  color: var(--card-menu-text);
 }
 
 .border-primary{

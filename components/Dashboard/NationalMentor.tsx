@@ -17,7 +17,7 @@ const data = cardData as {
 
 const NationalMentorDashboard = () => {
   return (
-    <div className="flex h-screen bg-gray-50 overflow-hidden w-full">
+    <div className="flex h-screen bg-gray-50 dark:bg-gray-900 overflow-hidden w-full">
       {/* Sidebar - Handled internally with its own mobile logic */}
       <Sidebar />
 

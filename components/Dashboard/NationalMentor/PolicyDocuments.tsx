@@ -20,7 +20,7 @@ const PolicyDocuments = () => {
 
   return (
     <div className="card-bg rounded-xl border border-slate-700/50 p-6 shadow-sm flex-1">
-      <h3 className="text-white text-base font-bold mb-4">
+      <h3 className="card-title text-base font-bold mb-4">
         Policy Documents
       </h3>
 

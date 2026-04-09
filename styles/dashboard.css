@@ -4,6 +4,17 @@
 .selected-menu-bg{
   background-color: #133441;
 }
+.selected-menu-text{
+  color: var(--card-menu-text);
+}
+
+.selected-menu{
+   color: #ffff;
+}
+.dark .selected-menu{
+    color: var(--card-menu-text);
+
+}
 
 .header-glassy-background{
   background-color: rgb(246 248 248 / 0.8);

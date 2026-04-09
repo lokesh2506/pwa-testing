@@ -21,10 +21,10 @@ const UserProfileSection = ({ userData }: UserProfileProps) => {
       }
       
       <div>
-        <h2 className="text-white text-sm font-semibold">
+        <h2 className="text-gray-900 dark:text-white  text-sm font-semibold">
           {userData.name}
         </h2>
-        <p className="card-subtitle text-xs">
+        <p className="card-subtitle dark:card-subtitle text-xs">
           {userData.role}
         </p>
       </div>

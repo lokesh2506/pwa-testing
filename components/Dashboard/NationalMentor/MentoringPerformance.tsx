@@ -26,7 +26,7 @@ const MentoringPerformance = () => {
       
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-white text-lg font-bold">
+        <h2 className="card-title text-lg font-bold">
           Mentoring Performance Trends
         </h2>
 

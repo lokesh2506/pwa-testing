@@ -12,7 +12,7 @@ const CHOPhaseDistribution = () => {
     <div className="card-bg rounded-xl border border-slate-700/50 p-6 shadow-sm flex flex-col">
       
       {/* Header */}
-      <h3 className="text-white text-base font-bold mb-1">
+      <h3 className="card-title text-base font-bold mb-1">
         CHO Phase Distribution
       </h3>
       <p className="card-subtitle text-sm mb-6">

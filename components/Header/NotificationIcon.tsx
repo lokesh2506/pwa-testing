@@ -14,7 +14,7 @@ const NotificationIcon = ({ notifications = [] }: NotificationProps) => {
         onClick={() => setIsOpen((prev) => !prev)}
         className="relative p-2 card-subtitle hover:text-white transition-colors cursor-pointer"
       >
-        <span className={`material-symbols-outlined ${isOpen ? 'text-white':''}`}>notifications</span>
+        <span className={`material-symbols-outlined ${isOpen ? 'text-gray-900 dark:text-white':''}`}>notifications</span>
 
         {notifications.length > 0 && (
           <span className="absolute top-1 right-1 text-[10px] bg-red-500 text-white px-1 rounded-full">
