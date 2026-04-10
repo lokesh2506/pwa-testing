@@ -12,7 +12,7 @@ export const useNavigate = () => {
   }, []);
 
   const navigate = (url: string) => {
-    if (!isReady) return; // 🔥 prevents early call
+    if (!isReady) return; // prevents early call
     router.push(url);
   };
 
