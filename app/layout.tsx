@@ -5,6 +5,7 @@ import { SafeArea } from "../components/pwa/SafeArea";
 import RegisterSW from "../components/pwa/RegisterSW";
 import { Inter } from "next/font/google";
 import ThemeProvider from "@/components/providers/ThemeProvider";
+import { InstallPrompt } from "@/components/pwa/InstallPrompt";
 
 
 //  Inter Font (100–900)
@@ -80,9 +81,12 @@ export default function RootLayout({
         <ThemeProvider>
           {/* Service Worker */}
           <RegisterSW />
-
           {/* Safe Area */}
-          <SafeArea>{children}</SafeArea>
+          <SafeArea>
+            {/* Install Popup */}
+            <InstallPrompt/>
+            {children}
+          </SafeArea>
         </ThemeProvider>
       </body>
     </html>
