@@ -1,0 +1,36 @@
+[
+  {
+    "label": "State Mentor",
+    "batches": [
+      {
+        "name": "Batch 5",
+        "status": {
+          "label": "In Progress",
+          "bgClass": "bg-sky-500/20",
+          "textClass": "text-sky-400"
+        }
+      }
+    ]
+  },
+  {
+    "label": "CHO",
+    "batches": [
+      {
+        "name": "Batch 5A",
+        "status": {
+          "label": "Active",
+          "bgClass": "bg-emerald-500/20",
+          "textClass": "text-emerald-400"
+        }
+      },
+      {
+        "name": "Batch 5B",
+        "status": {
+          "label": "Onboarding",
+          "bgClass": "bg-amber-500/20",
+          "textClass": "text-amber-400"
+        }
+      }
+    ]
+  }
+]

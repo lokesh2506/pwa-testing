@@ -13,49 +13,86 @@ import { BAR_COLORS } from "@/config/chartColors";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip);
 
-interface Props {
-  labels: string[];
-  values: number[];
-  colors?: string[];
+interface Dataset {
+  label?: string;
+  data: number[];
+  backgroundColor?: string;
 }
 
-const BarChart = ({ labels, values, colors }: Props) => {
-  const appliedColors =
-    colors && colors.length > 0
-      ? colors
-      : values.map((_, i) => BAR_COLORS[i % BAR_COLORS.length]);
+interface Props {
+  labels: string[];
+
+  //  Single dataset
+  values?: number[];
+  colors?: string[];
+
+  //  Multi dataset
+  datasets?: Dataset[];
+}
+
+const BarChart = ({ labels, values, colors, datasets }: Props) => {
+  //  MULTI DATASET MODE
+  const finalDatasets = datasets
+    ? datasets.map((ds, i) => ({
+        ...ds,
+        backgroundColor:
+          ds.backgroundColor ||
+          BAR_COLORS[i % BAR_COLORS.length], //  USE BAR_COLORS
+        borderRadius: {
+          topLeft: 6,
+          topRight: 6,
+        },
+        borderSkipped: false,
+      }))
+    : [
+        //  SINGLE DATASET MODE
+        {
+          data: values || [],
+          backgroundColor:
+            colors && colors.length > 0
+              ? colors
+              : (values || []).map(
+                  (_, i) => BAR_COLORS[i % BAR_COLORS.length]
+                ), //  USE BAR_COLORS
+          borderRadius: {
+            topLeft: 6,
+            topRight: 6,
+          },
+          borderSkipped: false,
+        },
+      ];
 
   const data = {
     labels,
-    datasets: [
-      {
-        data: values,
-        backgroundColor: appliedColors,
-        borderRadius: {
-            topLeft: 6,
-            topRight: 6,
-            bottomLeft: 0,
-            bottomRight: 0,
-        }, // small rounded radius (as requested)
-        borderSkipped: false, // important for full rounding
-      },
-    ],
+    datasets: finalDatasets,
   };
 
   const options = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
-      legend: { display: false },
+      legend: {
+        display: !!datasets, // show only in multi
+        labels: {
+          color: "#9db2b9",
+          font: { size: 10 },
+        },
+      },
     },
     scales: {
       x: {
         ticks: { color: "#9db2b9" },
-        grid: { display: false },
+        grid: { 
+          display: false,
+          drawBorder: false,
+        },
       },
       y: {
-        ticks: { display:false },
-        grid: { color: "rgba(255,255,255,0.1)" },
+        ticks: { display: false },
+        grid: { 
+          display: false,
+          drawBorder: false,
+        },
       },
     },
   };

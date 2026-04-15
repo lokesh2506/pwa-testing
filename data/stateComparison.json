@@ -1,0 +1,19 @@
+{
+  "title": "Statewise Performance Comparison",
+  "subtitle": "Cross-referencing SM and CHO conversion rates by geography",
+  "labels": ["Tamil Nadu", "Andhra", "Uttar Pradesh", "Kerala"],
+  "datasets": [
+    {
+      "label": "SM Enrolled",
+      "data": [85, 75, 80, 90],
+      "color": "bg-orange-500",
+      "chartColor": "rgba(249,115,22,0.9)"
+    },
+    {
+      "label": "CHO Certified",
+      "data": [50, 40, 55, 60],
+      "color": "bg-orange-500/60",
+      "chartColor": "rgba(249,115,22,0.5)"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "labels": ["North", "South", "East", "West", "Central"],
+  "datasets": [
+    {
+      "label": "Target",
+      "data": [90, 80, 95, 85, 70],
+      "color": "bg-slate-600",
+      "chartColor": "rgba(100,116,139,0.6)"
+    },
+    {
+      "label": "Enrolled",
+      "data": [65, 70, 50, 75, 45],
+      "color": "bg-primary",
+      "chartColor": "rgba(0,102,134,0.7)"
+    },
+    {
+      "label": "Certified",
+      "data": [40, 55, 30, 60, 25],
+      "color": "bg-emerald-500",
+      "chartColor": "rgba(16,185,129,0.7)"
+    }
+  ]
+}

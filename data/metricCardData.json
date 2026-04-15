@@ -1,0 +1,35 @@
+[
+  {
+    "id": "sm_enrolled",
+    "title": "SM Enrolled",
+    "value": "1,284",
+    "trend": "+12%",
+    "trendIcon": "arrow_upward",
+    "trendType": "up",
+    "progress": 72,
+    "description": "72% of annual target reached",
+    "icon": "groups"
+  },
+  {
+    "id": "cho_enrolled",
+    "title": "CHO Enrolled",
+    "value": "8,420",
+    "trend": "+8.4%",
+    "trendIcon": "arrow_upward",
+    "trendType": "up",
+    "progress": 65,
+    "description": "65% of regional quota fulfilled",
+    "icon": "medical_services"
+  },
+  {
+    "id": "nm_numbers",
+    "title": "NM Numbers",
+    "value": "452",
+    "trend": "-2%",
+    "trendIcon": "arrow_downward",
+    "trendType": "down",
+    "progress": 88,
+    "description": "88% active nodal managers",
+    "icon": "assignment_ind"
+  }
+]

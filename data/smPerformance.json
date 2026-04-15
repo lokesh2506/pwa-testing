@@ -1,0 +1,20 @@
+[
+  {
+    "label": "Target",
+    "value": "2,000",
+    "percentage": 100,
+    "type": "goal"
+  },
+  {
+    "label": "Enrolled",
+    "value": "1,284",
+    "percentage": 64,
+    "type": "active"
+  },
+  {
+    "label": "Certified",
+    "value": "942",
+    "percentage": 47,
+    "type": "final"
+  }
+]

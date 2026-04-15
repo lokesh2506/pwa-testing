@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react";
-import statesData from "@/data/states.json";
+import statesData from "@/data/statesDistricts.json";
 
 export interface State {
   name: string;

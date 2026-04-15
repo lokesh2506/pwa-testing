@@ -1,3 +1,12 @@
+:root {
+  /* existing */
+  --metric-icon-color: 0 0 0; /* light → black */
+}
+
+.dark {
+  --metric-icon-color: 255 255 255; /* dark → white */
+}
+
 .logout-icon{
     font-size: 19px !important;
 }
@@ -26,4 +35,18 @@
 
 .datacard-icon{
   font-size: 12px !important;
+}
+
+
+.metric-card-icon {
+  font-size: var(--metric-icon-size, 60px) !important;
+  color: rgb(var(--metric-icon-color) / 1);
+}
+
+
+/* Tablet (768px – 1280px) */
+@media (min-width: 768px) and (max-width: 1280px) {
+  .metric-card-icon {
+    font-size: 48px !important;
+  }
 }
