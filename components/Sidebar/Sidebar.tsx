@@ -8,7 +8,7 @@ import { useSidebar } from "@/hooks/dashboard/useSidebar";
 import SideBarArrow from "./SideBarArrow";
 
 const Sidebar = () => {
-  const { isOpen, toggle, activeTab,isArrowVisible, setActiveTab, navigate } = useSidebar();
+  const { isOpen, toggle, activeTab,isArrowVisible, handleTabChange, navigate } = useSidebar();
 
   return (
     <>
@@ -41,7 +41,7 @@ const Sidebar = () => {
               <SideBarMenu
                 menuData={data.menu}
                 activeTab={activeTab}
-                setActiveTab={setActiveTab}
+                onTabChange={handleTabChange}
               />
             </div>
 

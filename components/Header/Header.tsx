@@ -2,6 +2,7 @@ import { SearchBox } from "./SearchBox"
 import data from "@/data/notification.json";
 import ThemeToggle from "./ThemeToggle";
 import NotificationIcon from "./NotificationIcon";
+import StateDistrictSelector from "../Dashboard/NationalCoordinator/StateDistrictSelector";
 
 
 const Header = () => {
@@ -11,11 +12,13 @@ const Header = () => {
       backdrop-blur-md border-b border-slate-700/30 
       px-6 py-4 flex items-center justify-between'
     > 
-      <h1 className="text-slate-900 dark:text-white text-lg md:text-2xl font-bold leading-tight">
+      <h1 className="text-slate-900 dark:text-white text-lg md:text-2xl font-bold leading-tight hidden md:block">
         National Overview
       </h1>
-      <div className="flex items-center gap-4">
-         {/* Theme Toggle */}
+      <div className="flex items-center gap-4 ">
+        {/* State and District DropDown */}
+        <StateDistrictSelector/>
+        {/* Theme Toggle */}
         <ThemeToggle />
         {/* Search box */}
         <SearchBox 

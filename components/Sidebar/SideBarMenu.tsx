@@ -3,16 +3,16 @@ import { MenuItem } from "@/types/dashboard/sidebar";
 interface SideBarMenuProps {
   menuData: MenuItem[];
   activeTab: string | null,
-  setActiveTab: React.Dispatch<React.SetStateAction<string | null>>;
+  onTabChange: (key: string) => void; 
 }
 
-const SideBarMenu = ({ menuData,activeTab,setActiveTab }: SideBarMenuProps) => {
+const SideBarMenu = ({ menuData,activeTab,onTabChange  }: SideBarMenuProps) => {
   return (
     <nav className="flex flex-col gap-2">
       {menuData.map((item) => (
         <div
           key={item?.key}
-          onClick={() => setActiveTab(item.key)}
+          onClick={() => onTabChange (item.key)}
           className={`flex items-center gap-3 px-3 py-2.5 rounded-lg 
               ${
               activeTab === item?.key

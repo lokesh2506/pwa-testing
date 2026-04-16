@@ -1,10 +1,14 @@
-"use client"
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import { DropdownOption } from "@/types/common/dropdown";
 
-export const useDropdown = (options: DropdownOption[]) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [selected, setSelected] = useState<DropdownOption>(options[0]);
+export const useDropdown = (initialOptions: DropdownOption[]) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const [selected, setSelected] = useState<DropdownOption>(
+    initialOptions[0]
+  );
 
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
@@ -15,7 +19,6 @@ export const useDropdown = (options: DropdownOption[]) => {
     setIsOpen(false);
   };
 
-  // click outside handler
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -27,10 +30,15 @@ export const useDropdown = (options: DropdownOption[]) => {
     };
 
     document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
+    return () =>
+      document.removeEventListener("click", handleClickOutside);
   }, []);
 
   return {
-    isOpen,selected,dropdownRef,toggle,selectOption,
+    isOpen,
+    selected,
+    dropdownRef,
+    toggle,
+    selectOption,
   };
 };

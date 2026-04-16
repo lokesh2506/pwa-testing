@@ -1,6 +1,5 @@
 {
   "states": [
-    { "name": "National (All States)", "code": "ALL" },
     { "name": "Andaman and Nicobar Islands", "code": "AN" },
     { "name": "Andhra Pradesh", "code": "AP" },
     { "name": "Arunachal Pradesh", "code": "AR" },

@@ -1,46 +1,46 @@
-import metricData from "@/data/metricCardData.json";
-import MetricCard from './NationalCoordinator/MetricCard';
-import { MetricCardData } from "@/types/dashboard/metricCard";
-import SMPerformanceCard from "./NationalCoordinator/SMPerformanceCard";
+"use client";
 
-import smData from "@/data/smPerformance.json";
+import { useDashboardStore } from "@/store/dashboard.store";
+import MetricCard from "./NationalCoordinator/MetricCard";
+import SMPerformanceCard from "./NationalCoordinator/SMPerformanceCard";
 import CHOPerformanceCard from "./NationalCoordinator/CHOPerformanceCard";
 import BatchDetailsCard from "./NationalCoordinator/BatchDetailsCard";
-import batchData from "@/data/batchDetails.json"
-import choData from "@/data/choPerformance.json";
 import StateComparisonCard from "./NationalCoordinator/StateComparisonCard";
-import stateData from "@/data/stateComparison.json";
-
-
-
-
-const metricCardData = metricData as MetricCardData[];
-
 
 const NationalCoordinator = () => {
+  const { data, loading } = useDashboardStore();
+
+  if (loading) return <p>Loading...</p>;
+  if (!data) return <p>Select State & District</p>;
+
   return (
-    <div className="w-full flex flex-col gap-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-        {metricCardData.map((card) => (
+    <div className="flex flex-col gap-6 w-full">
+      {/* Metric Cards */}
+      <div className="grid md:grid-cols-3 gap-6">
+        {data.metricCardData.map((card: any) => (
           <MetricCard key={card.id} data={card} />
         ))}
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        <SMPerformanceCard smPerformanceData={smData}/>
+
+      {/* Charts */}
+      <div className="grid lg:grid-cols-4 gap-6">
+        <SMPerformanceCard smPerformanceData={data.smPerformanceData} />
+
         <CHOPerformanceCard
-          labels={choData.labels}
-          datasets={choData.datasets}
+          labels={data.choPerformanceData.labels}
+          datasets={data.choPerformanceData.datasets}
         />
-        <BatchDetailsCard batchData={batchData}/>
+
+        <BatchDetailsCard batchData={data.batchDetails} />
       </div>
-      <div className="">
-        <StateComparisonCard
-          title={stateData.title}
-          subtitle={stateData.subtitle}
-          labels={stateData.labels}
-          datasets={stateData.datasets}
-        />
-      </div>
+
+      {/* Comparison */}
+      <StateComparisonCard
+        title={data.stateComparison.title}
+        subtitle={data.stateComparison.subtitle}
+        labels={data.stateComparison.labels}
+        datasets={data.stateComparison.datasets}
+      />
     </div>
   );
 };

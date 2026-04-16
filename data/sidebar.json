@@ -5,16 +5,11 @@
     "profileImage": "/icons/icon-192x192.png"
   },
   "menu": [
-    { "name": "Dashboard", "icon": "dashboard","key":"dashboard" },
-    { "name": "State Mentors", "icon": "groups","key":"state_mentors"  },
-    { "name": "CHOs", "icon": "person","key":"chos"  },
-    { "name": "Reports", "icon": "bar_chart","key":"reports"  },
-    { "name": "Files", "icon": "folder_open","key":"files"  },
-    { "name": "Settings", "icon": "settings","key":"settings"  },
-    { "name": "State Mentors", "icon": "groups","key":"state_mentors1"  },
-    { "name": "CHOs", "icon": "person","key":"chos1"  },
-    { "name": "Reports", "icon": "bar_chart","key":"reports1"  },
-    { "name": "Files", "icon": "folder_open","key":"files1"  },
-    { "name": "Settings", "icon": "settings","key":"settings1"  }
+    { "name": "Dashboard", "icon": "dashboard", "key": "dashboard", "path": "/dashboard" },
+    { "name": "State Mentors", "icon": "groups", "key": "state_mentors", "path": "/state-mentors" },
+    { "name": "CHOs", "icon": "person", "key": "chos", "path": "/chos" },
+    { "name": "Reports", "icon": "bar_chart", "key": "reports", "path": "/reports" },
+    { "name": "Files", "icon": "folder_open", "key": "files", "path": "/files" },
+    { "name": "Settings", "icon": "settings", "key": "settings", "path": "/settings" }
   ]
 }
