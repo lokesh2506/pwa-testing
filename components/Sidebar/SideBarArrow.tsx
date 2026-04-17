@@ -1,5 +1,6 @@
 import { SidebarArrow } from "@/types/dashboard/sidebar"
-import CommonButton from "../buttons/CommonButton";
+import CommonButton from "@/components/buttons/CommonButton";
+
 
 const SideBarArrow = ({ toggle,isArrowVisible }: SidebarArrow) => {
   return (

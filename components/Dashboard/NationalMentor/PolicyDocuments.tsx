@@ -37,7 +37,7 @@ const PolicyDocuments = () => {
 
       {/* Toggle */}
       {documents.length > INITIAL_COUNT && (
-        <CommonButton
+        <CommonButton 
           clickFunction={() => setExpanded((prev) => !prev)}
           buttonStyle="block w-full text-center selected-menu-text text-sm font-medium hover:underline mt-3"
           content={expanded ? "Show less" : "View all documents"}

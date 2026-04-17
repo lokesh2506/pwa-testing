@@ -2,7 +2,7 @@
 
 import { useLogin } from "@/hooks/auth/useLogin";
 import { useState } from "react";
-import CommonButton from "../buttons/CommonButton";
+import CommonButton from "@/components/buttons/CommonButton";
 
 
 export default function LoginPage() {

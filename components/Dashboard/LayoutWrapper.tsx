@@ -1,8 +1,8 @@
 
 "use client";
 
-import Header from "../header/Header";
-import Sidebar from "../sidebar/Sidebar";
+import Header from "../Header/Header";
+import Sidebar from "../Sidebar/Sidebar";
 
 export default function LayoutWrapper({
   children,
