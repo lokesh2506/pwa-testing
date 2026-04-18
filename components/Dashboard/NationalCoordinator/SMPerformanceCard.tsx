@@ -14,7 +14,7 @@ interface smPerformanceProps {
 
 const SMPerformanceCard = ({smPerformanceData}:smPerformanceProps) => {
   return (
-    <div className="lg:col-span-1 card-bg border border-slate-700/50 p-6 rounded-2xl">
+    <div className="w-full lg:max-w-[25%] card-bg border border-slate-700/50 p-6 rounded-2xl">
       
       {/* Header */}
       <div className="flex justify-between items-center mb-6">

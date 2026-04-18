@@ -16,22 +16,22 @@ const Page = () => {
         return <NationalCoordinator />;
 
       case "state-mentors":
-        return <p>StateMentors</p>;
+        return <p className="card-title">StateMentors</p>;
 
       case "chos":
-        return <p>CHOs</p>;
+        return <p className="card-title">CHOs</p>;
 
       case "reports":
-        return <p>reports</p>;
+        return <p className="card-title">reports</p>;
 
       case "files":
-        return <p>Files</p>;
+        return <p className="card-title">Files</p>;
 
       case "settings":
-        return <p>Settings</p>;
+        return <p className="card-title">Settings</p>;
 
       default:
-        return <div>Page Not Found</div>;
+        return <div className="card-title" >Page Not Found</div>;
     }
   };
 

@@ -21,16 +21,16 @@ const CHOPerformanceCard = ({ labels, datasets }: Props) => {
   }));
 
   return (
-    <div className="lg:col-span-2 card-bg border border-slate-700/50 p-6 rounded-2xl">
+    <div className="w-full  lg:max-w-[50%] card-bg border border-slate-700/50 p-6 rounded-2xl">
       
       {/* Header */}
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex flex-col gap-2 md:flex-row justify-between items-center mb-6">
         <h4 className="font-bold text-sm card-title">
           CHO Performance Overview
         </h4>
 
         {/* Legend */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 w-full md:w-auto justify-end">
           {datasets.map((item, i) => (
             <StatusIndicator
               key={i}

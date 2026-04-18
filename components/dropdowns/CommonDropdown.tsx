@@ -23,7 +23,7 @@ const CommonDropdown = ({
   onSelect,
 }: Props) => {
   return (
-    <div className="relative" ref={dropdownRef}>
+    <div className="relative max-w-[45%]" ref={dropdownRef}>
       {label && (
         <label className="text-xs uppercase font-bold mb-2 block">
           {label}
@@ -33,9 +33,9 @@ const CommonDropdown = ({
       {/* Trigger */}
       <div
         onClick={onToggle}
-        className="max-w-fit bg-slate-800 text-white border border-slate-600 rounded-lg p-2.5 text-sm cursor-pointer flex justify-between items-center hover:bg-slate-700"
+        className="w-full bg-slate-800 text-white border border-slate-600 rounded-lg p-2.5 text-sm cursor-pointer flex justify-between items-center hover:bg-slate-700 max-w-48"
       >
-        <span>{selected?.value}</span>
+        <span className="truncate">{selected?.value}</span>
 
         <span className="material-symbols-outlined text-sm">
           expand_more
@@ -44,7 +44,7 @@ const CommonDropdown = ({
 
       {/* Options */}
       {isOpen && (
-        <div className="absolute left-0 top-full mt-1  bg-slate-800 border border-slate-600 rounded-lg shadow-lg z-50 max-h-64 overflow-y-auto custom-scrollbar w-64">
+        <div className="absolute left-0 top-full mt-1  bg-slate-800 border border-slate-600 rounded-lg shadow-lg z-50 max-h-64 overflow-y-auto custom-scrollbar min-w-48 md:w-64 max-w-64 ">
           {options.map((option) => (
             <div
               key={option.key}

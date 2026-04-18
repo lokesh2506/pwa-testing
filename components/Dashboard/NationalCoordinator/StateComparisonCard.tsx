@@ -30,7 +30,7 @@ const StateComparisonCard = ({
     <div className="card-bg border border-slate-700/50 p-8 rounded-2xl">
       
       {/* Header */}
-      <div className="flex justify-between items-center mb-8">
+      <div className="flex flex-col md:flex-row gap-2 justify-between items-center mb-8">
         
         <div>
           <h4 className="text-xl font-bold card-title">
@@ -42,7 +42,7 @@ const StateComparisonCard = ({
         </div>
 
         {/* Legend */}
-        <div className="flex items-center gap-4 text-xs font-medium">
+        <div className="flex items-center gap-4 text-xs font-medium w-full justify-end md:w-auto">
           {datasets.map((item, i) => (
             <StatusIndicator
               key={i}
@@ -54,7 +54,7 @@ const StateComparisonCard = ({
       </div>
 
       {/* Chart */}
-      <div className="h-80">
+      <div className="h-80 w-full">
         <BarChart labels={labels} datasets={chartDatasets} />
       </div>
     </div>
