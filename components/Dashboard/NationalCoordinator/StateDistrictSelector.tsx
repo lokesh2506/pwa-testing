@@ -103,7 +103,7 @@ const StateDistrictSelector = () => {
   }, [state, district]); //  minimal deps
 
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 w-[60%] md:max-w-full">
       <CommonDropdown
         options={[DEFAULT_STATE, ...stateOptions]}
         selected={selectedState}

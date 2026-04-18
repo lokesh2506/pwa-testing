@@ -10,8 +10,8 @@ import StateComparisonCard from "./NationalCoordinator/StateComparisonCard";
 const NationalCoordinator = () => {
   const { data, loading } = useDashboardStore();
 
-  if (loading) return <p>Loading...</p>;
-  if (!data) return <p>Select State & District</p>;
+  if (loading) return <p className="card-title">Loading...</p>;
+  if (!data) return <p className="card-title">Select State & District</p>;
 
   return (
     <div className="flex flex-col gap-6 w-full">
@@ -23,7 +23,7 @@ const NationalCoordinator = () => {
       </div>
 
       {/* Charts */}
-      <div className="grid lg:grid-cols-4 gap-6">
+      <div className="flex flex-col lg:flex-row gap-6">
         <SMPerformanceCard smPerformanceData={data.smPerformanceData} />
 
         <CHOPerformanceCard

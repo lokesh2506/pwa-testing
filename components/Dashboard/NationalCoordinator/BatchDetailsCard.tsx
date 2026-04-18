@@ -10,7 +10,7 @@ interface BatchDetailsProps{
 
 const BatchDetailsCard = ({batchData}:BatchDetailsProps) => {
   return (
-    <div className="lg:col-span-1 card-bg border border-slate-700/50 p-6 rounded-2xl flex flex-col justify-between">
+    <div className="w-full lg:max-w-[25%] card-bg border border-slate-700/50 p-6 rounded-2xl flex flex-col justify-between">
       
       {/* Top Section */}
       <div>

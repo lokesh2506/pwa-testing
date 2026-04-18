@@ -8,11 +8,11 @@ const NotificationIcon = ({ notifications = [] }: NotificationProps) => {
 
   const {isOpen,containerRef,setIsOpen} = useNotification();
   return (
-    <div ref={containerRef} className="relative">
+    <div ref={containerRef} className="relative ">
       {/* Bell Icon */}
       <div
         onClick={() => setIsOpen((prev) => !prev)}
-        className="relative p-2 card-subtitle hover:text-white transition-colors cursor-pointer"
+        className="relative flex p-2 card-subtitle hover:text-white transition-colors cursor-pointer"
       >
         <span className={`material-symbols-outlined ${isOpen ? 'text-gray-900 dark:text-white':''}`}>notifications</span>
 

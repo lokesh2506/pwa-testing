@@ -8,15 +8,17 @@ const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <CommonButton
-        buttonStyle="flex items-center"
-        content={
-            <span className={`material-symbols-outlined  text-xl ${theme === "dark" ? 'text-white':'text-black'}`}>
-                {theme === "dark" ? "light_mode" : "dark_mode"}
-            </span>
-        }
-        clickFunction={toggleTheme}  
-    />
+    <div className="flex">
+      <CommonButton
+          buttonStyle="flex items-center"
+          content={
+              <span className={`material-symbols-outlined  text-xl ${theme === "dark" ? 'text-white':'text-black'}`}>
+                  {theme === "dark" ? "light_mode" : "dark_mode"}
+              </span>
+          }
+          clickFunction={toggleTheme}  
+      />
+    </div>
 
   );
 };
