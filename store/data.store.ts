@@ -1,21 +1,25 @@
 import { create } from "zustand";
 
-type DashboardState = {
+type DataState = {
   state: string | null;
   district: string | null;
+  activeTab: string | null;
   data: any;
   loading: boolean;
 
   setFilters: (state: string, district: string) => void;
+  setActiveTab: (tab: string) => void;
   setStateOnly: (state: string) => void;
   fetchDashboardData: () => Promise<void>;
 };
 
-export const useDashboardStore = create<DashboardState>((set, get) => ({
+export const useDataStore = create<DataState>((set, get) => ({
   state: null,
   district: null,
+  activeTab:null,
   data: null,
   loading: false,
+
 
   setStateOnly: (state) => {
     set({ state, district: null }); // reset district
@@ -23,7 +27,20 @@ export const useDashboardStore = create<DashboardState>((set, get) => ({
 
   setFilters: (state, district) => {
     set({ state, district });
-    get().fetchDashboardData(); // trigger API
+    if (get().activeTab === "dashboard") {
+        get().fetchDashboardData();
+      }
+  },
+
+  setActiveTab: (tab) => {
+    set({ activeTab: tab });
+
+    const { state, district } = get();
+
+    //  If dashboard is clicked AND filters already exist → call API
+    if (tab === "dashboard" && state && district) {
+      get().fetchDashboardData();
+    }
   },
 
   fetchDashboardData: async () => {

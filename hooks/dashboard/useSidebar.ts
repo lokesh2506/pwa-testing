@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback } from "react";
 import sideBarData from "@/data/sidebar.json";
 import { useNavigate } from "./useNavigate";
 import { usePathname } from "next/navigation";
+import {useDataStore} from "@/store/data.store"
 
 type MenuItem = {
   key: string;
@@ -15,7 +16,7 @@ export const useSidebar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isArrowVisible, setIsArrowVisible] = useState<boolean>(true);
   const [hideTimeout, setHideTimeout] = useState<NodeJS.Timeout | null>(null);
-  const [activeTab, setActiveTab] = useState<string | null>(null);
+  const { activeTab,setActiveTab: setDashboardTab } = useDataStore();
 
   const { navigate } = useNavigate();
   const pathname = usePathname();
@@ -41,16 +42,16 @@ export const useSidebar = () => {
     const matchedKey = getKeyFromPath(pathname);
 
     if (matchedKey) {
-      setActiveTab(matchedKey);
+      setDashboardTab(matchedKey);
     } else {
-      // fallback
-      setActiveTab(sideBarData?.menu?.[0]?.key || null);
+      const fallback = sideBarData?.menu?.[0]?.key || null;
+      if (fallback) setDashboardTab(fallback);
     }
-  }, [pathname, getKeyFromPath]);
+  }, [pathname, getKeyFromPath, setDashboardTab]);
 
   // ================= HANDLE TAB CLICK =================
   const handleTabChange = (key: string) => {
-    setActiveTab(key);
+    setDashboardTab(key);
 
     const path = getPathFromKey(key);
 
@@ -94,7 +95,7 @@ export const useSidebar = () => {
     toggle,
     isArrowVisible,
     activeTab,
-    setActiveTab,
+    setDashboardTab,
     handleTabChange, 
     navigate,
   };

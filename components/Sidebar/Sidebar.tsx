@@ -8,8 +8,10 @@ import SideBarMenu from "./SideBarMenu";
 import { useSidebar } from "@/hooks/dashboard/useSidebar";
 import SideBarArrow from "./SideBarArrow";
 
+
 const Sidebar = () => {
-  const { isOpen, toggle, activeTab,isArrowVisible, handleTabChange, navigate } = useSidebar();
+  const { isOpen,activeTab, toggle,isArrowVisible, handleTabChange, navigate } = useSidebar();
+
 
   return (
     <>

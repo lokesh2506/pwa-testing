@@ -5,13 +5,13 @@ import CommonDropdown from "@/components/dropdowns/CommonDropdown";
 import { useDropdown } from "@/hooks/common/useDropdown";
 import statesData from "@/data/statesDistricts.json";
 import { DropdownOption } from "@/types/common/dropdown";
-import { useDashboardStore } from "@/store/dashboard.store";
+import { useDataStore } from "@/store/data.store";
 
 const DEFAULT_STATE = { key: "__STATE__", value: "State" };
 const DEFAULT_DISTRICT = { key: "__DISTRICT__", value: "District" };
 
 const StateDistrictSelector = () => {
-  const { state, district, setFilters, setStateOnly } = useDashboardStore();
+  const { state, district, setFilters, setStateOnly } = useDataStore();
 
   const stateOptions = statesData.states.map((s) => ({
     key: s.code,
