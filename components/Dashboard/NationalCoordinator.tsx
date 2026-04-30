@@ -1,6 +1,6 @@
 "use client";
 
-import { useDataStore } from "@/store/data.store";
+import { useGlobalDataStore } from "@/store/globalData.store";
 import MetricCard from "./NationalCoordinator/MetricCard";
 import SMPerformanceCard from "./NationalCoordinator/SMPerformanceCard";
 import CHOPerformanceCard from "./NationalCoordinator/CHOPerformanceCard";
@@ -11,9 +11,8 @@ import { exportMultiSheetExcel } from "@/utils/exportToExcel";
 import CommonButton from "../buttons/CommonButton";
 
 const NationalCoordinator = () => {
-  const { data, loading } = useDataStore();
+  const data = useGlobalDataStore((s) => s.dashboardData);
 
-  if (loading) return <p className="card-title">Loading...</p>;
   if (!data) return <p className="card-title">Select State & District</p>;
 
 
@@ -82,15 +81,15 @@ const NationalCoordinator = () => {
 
   return (
     <div className="flex flex-col gap-2 w-full">
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col gap-2 justify-between items-center md:flex-row">
         <div className="flex flex-col">
-           <h1 className="text-3xl font-extrabold dark:text-white card-title">National Coordinator Dashboard</h1>
-            <p className="dark:text-white card-title">Real-time performance metrics across all active states</p>
+           <h1 className="text-xl font-extrabold dark:text-white card-title md:text-2xl">National Coordinator Dashboard</h1>
+            <p className="dark:text-white card-title text-md">Real-time performance metrics across all active states</p>
         </div>
-        {/* Export Report button */}
+        {/* Export  button */}
         <CommonButton
           buttonStyle="bg-primary text-white px-4 py-2 rounded w-fit ml-auto items-center flex gap-1 cursor-pointer"
-          content={<><span className="material-symbols-outlined text-sm">download</span>Export Report</>}
+           content={<><span className="material-symbols-outlined text-sm">download</span>Export </>}
           type="button"
           clickFunction={()=>handleExport(data)}
         

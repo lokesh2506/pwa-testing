@@ -8,9 +8,9 @@ const SideBarArrow = ({ toggle,isArrowVisible }: SidebarArrow) => {
       type="button"
       clickFunction={toggle}
       buttonStyle={`
-        fixed bottom-6 left-6 z-50 lg:hidden
+        fixed bottom-6 left-6 z-50 xl:hidden
         w-10 h-10 p-0
-        bg-white rounded-full
+        dark:bg-white bg-slate-900 rounded-full
         flex items-center justify-center
         shadow-lg hover:shadow-xl
         cursor-pointer
@@ -20,7 +20,7 @@ const SideBarArrow = ({ toggle,isArrowVisible }: SidebarArrow) => {
         }
       `}
       content={
-        <span className="material-symbols-outlined text-slate-900 text-xl">
+        <span className="material-symbols-outlined text-slate-900 dark:text-white text-xl">
           chevron_right
         </span>
       }

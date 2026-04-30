@@ -1,0 +1,20 @@
+[
+  {
+    "heading": "Total CHOs",
+    "value": "1,248",
+    "icon": "group",
+    "colorClass": "selected-menu-bg selected-menu"
+  },
+  {
+    "heading": "Avg. Completion",
+    "value": "84.2%",
+    "icon": "trending_up",
+    "colorClass": "text-orange-400 bg-orange-400/10"
+  },
+  {
+    "heading": "Active Mentors",
+    "value": "42",
+    "icon": "verified",
+    "colorClass": "text-emerald-400 bg-emerald-400/10"
+  }
+]

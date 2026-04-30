@@ -5,13 +5,13 @@ import CommonDropdown from "@/components/dropdowns/CommonDropdown";
 import { useDropdown } from "@/hooks/common/useDropdown";
 import statesData from "@/data/statesDistricts.json";
 import { DropdownOption } from "@/types/common/dropdown";
-import { useDataStore } from "@/store/data.store";
+import { useGlobalDataStore } from "@/store/globalData.store";
 
 const DEFAULT_STATE = { key: "__STATE__", value: "State" };
 const DEFAULT_DISTRICT = { key: "__DISTRICT__", value: "District" };
 
 const StateDistrictSelector = () => {
-  const { state, district, setFilters, setStateOnly } = useDataStore();
+  const { state, district, setFilters, setStateOnly } = useGlobalDataStore();
 
   const stateOptions = statesData.states.map((s) => ({
     key: s.code,
@@ -111,6 +111,7 @@ const StateDistrictSelector = () => {
         dropdownRef={stateRef}
         onToggle={toggleState}
         onSelect={handleStateSelect}
+        containerStyle="max-w-[45%]"
       />
 
       <CommonDropdown
@@ -124,6 +125,7 @@ const StateDistrictSelector = () => {
         dropdownRef={districtRef}
         onToggle={toggleDistrict}
         onSelect={handleDistrictSelect}
+        containerStyle="max-w-[45%]"
       />
     </div>
   );

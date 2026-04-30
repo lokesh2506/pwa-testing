@@ -4,7 +4,7 @@ import { DropdownOption } from "@/types/common/dropdown";
 
 interface Props {
   label?: string;
-  
+  containerStyle?:string;
   options: DropdownOption[];
   selected: DropdownOption;
   isOpen: boolean;
@@ -21,9 +21,10 @@ const CommonDropdown = ({
   dropdownRef,
   onToggle,
   onSelect,
+  containerStyle,
 }: Props) => {
   return (
-    <div className="relative max-w-[45%]" ref={dropdownRef}>
+    <div className={`relative ${containerStyle}`} ref={dropdownRef}>
       {label && (
         <label className="text-xs uppercase font-bold mb-2 block">
           {label}

@@ -301,7 +301,7 @@ module.exports = {
 - State selection
 - Input validation
 
-### 6.8 useDataStore
+### 6.8 useGlobalDataStore
 - Manages state/district filters
 - Triggers API calls when filters change
 - Caches dashboard data
@@ -391,7 +391,7 @@ Cascading dropdown system for filtering data.
 **Features:**
 - State dropdown populated from `statesDistricts.json`
 - District dropdown (enabled only after state selection)
-- Zustand store integration (`useDataStore`)
+- Zustand store integration (`useGlobalDataStore`)
 - Persists selections across page navigations
 - Synced display on mount using `useEffect`
 - Triggers API call on district selection
@@ -674,8 +674,8 @@ LayoutWrapper (Client Component)
 1. User logs in → `useAuthStore` persists auth state
 2. User navigates to dashboard → `useProtected` verifies auth
 3. Header shows `StateDistrictSelector` → User selects state/district
-4. Selection triggers `setFilters()` → `useDataStore` calls `POST /api/dashboard`
-5. API returns filtered data → Components subscribe to `useDataStore`
+4. Selection triggers `setFilters()` → `useGlobalDataStore` calls `POST /api/dashboard`
+5. API returns filtered data → Components subscribe to `useGlobalDataStore`
 6. Charts, cards, and metrics re-render with new data
 7. Store persists selections → Restored on page reload
 

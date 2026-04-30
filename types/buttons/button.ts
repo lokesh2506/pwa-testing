@@ -3,4 +3,5 @@ export interface ButtonProps {
   content: React.ReactNode,
   clickFunction: () => void,
   type?:"button" | "submit" | "reset",
+  disabled?:boolean
 }

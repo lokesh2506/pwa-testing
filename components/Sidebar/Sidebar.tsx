@@ -19,7 +19,7 @@ const Sidebar = () => {
       {isOpen && (
         <div
           onClick={toggle}
-          className="fixed inset-0 bg-black/50 z-30 lg:hidden transition-opacity duration-300"
+          className="fixed inset-0 bg-black/50 z-30 xl:hidden transition-opacity duration-300"
           aria-hidden="true"
         />
       )}
@@ -29,7 +29,7 @@ const Sidebar = () => {
         className={`
           fixed top-0 left-0 h-screen w-64 z-40 card-bg
           transition-transform duration-300 ease-in-out
-          lg:static lg:translate-x-0 lg:z-auto lg:w-64 lg:flex-shrink-0
+          xl:static xl:translate-x-0 xl:z-auto xl:w-64 xl:flex-shrink-0
           ${isOpen ? "translate-x-0" : "-translate-x-full"}
         `}
       >
